@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting started</title>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+    <div>
+      <span v-bind:title="title">
+        Hover your mouse over me for a few seconds
+        to see my dynamically bound title!
+      </span>
+    </div>
+
+    <div>
+      <span v-if="seen">Now you see me</span>
+    </div>
+
+    <div>
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+    <div>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <div>
+      <input v-model="message">
+    </div>
+  </div>
+  <script type="module">
+    import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        title: `You loaded this page on ${new Date().toLocaleString()}`,
+        seen: true,
+        todos: [
+          { text: 'Learn JavaScript' },
+          { text: 'Learn Vue' },
+          { text: 'Build something awesome' }
+        ]
+      },
+      methods: {
+        reverseMessage() {
+          this.message = this.message.split('').reverse().join('')
+        },
+      },
+    })
+  </script>
+</body>
+</html>
