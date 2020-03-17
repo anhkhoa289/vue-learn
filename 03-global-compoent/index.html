@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component</title>
+</head>
+<body>
+  <div id="app">
+    <example></example>
+    <ol>
+      <Item v-for="item in todos" v-bind:todo="item" v-bind:key="item.id"></Item>
+    </ol>
+  </div>
+  <script src="bundle.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        todos: [
+          { text: 'Learn JavaScript' },
+          { text: 'Learn Vue' },
+          { text: 'Build something awesome' }
+        ]
+      }
+    })
+
+    app.todos = [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' },
+      { text: 'Hello moleculer' },
+      { text: 'Hello Everybody' },
+    ]
+  </script>
+</body>
+</html>
