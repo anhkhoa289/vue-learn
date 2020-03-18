@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+  <p>Reversed message: "{{ reverseMessage2() }}"</p>
+  <script>
+    const vue = {
+      data: {
+        message: 'Hello',
+        name: 'Khoa',
+        greeting: 'Hello Khoa'
+      },
+      computed: {
+        reversedMessage() {
+          return this.message.split('').reverse().join('')
+        },
+      },
+      methods: {
+        reverseMessage2() {
+          return this.message.split('').reverse().join('')
+        },
+      },
+      watch: {
+        message(val) {
+          this.greeting = `${val} ${this.name}`
+        },
+        name(val) {
+          this.greeting = `${this.message} ${val} `
+        },
+      },
+    }
+  </script>
+</body>
+</html>

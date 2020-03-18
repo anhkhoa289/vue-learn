@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumary</title>
+</head>
+<body>
+  <span v-html="rawHtml"></span>
+
+
+  <div v-bind:id="customId"></div>
+  <div v-bind:id="'list-' + id"></div>
+  <button v-bind:disabled="isButtonDisabled">Submit</button>
+  <a v-bind:href="url"> ... </a>
+
+
+  <p v-if="seen">Now you see me</p>
+  <p v-else-if="haha">Now you see me</p>
+  <p v-else>Now you see me</p>
+  <p v-for="item in todos" v-bind:todo="item" v-bind:key="item.id"></p>
+
+
+  <a v-on:click="doSomething"> ... </a>
+  <form v-on:submit.prevent="onSubmit"> ... </form>
+
+
+  <a v-bind:[attributeName]="url"> ... </a>
+  <a v-on:[eventName]="doSomething"> ... </a>
+
+
+
+
+  <!-- Short hand -->
+  <!-- v-bind: -->
+  <a v-bind:href="url"> ... </a>
+  <a :href="url"> ... </a>
+  <a :[key]="url"> ... </a>
+
+
+  <!-- v-on -->
+  <a v-on:click="doSomething"> ... </a>
+  <a @click="doSomething"> ... </a>
+  <a @[key]="doSomething"> ... </a>
+</body>
+</html>
