@@ -13,11 +13,12 @@ new Vue({
     Parent,
   },
   data: {
+    address: '91 Võ Như Hưng',
     todos: [
       { text: 'Learn JavaScript' },
       { text: 'Learn Vue' },
       { text: 'Build something awesome' }
-    ]
-  }
+    ],
+  },
 })
 
