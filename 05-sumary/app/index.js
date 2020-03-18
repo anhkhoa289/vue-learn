@@ -1,17 +1,13 @@
 import Vue from 'vue/dist/vue'
-import Parent from './components/Parent.vue'
-import Layout from './components/Layout.vue'
+import Components from './components'
 import { Plugin } from 'vue-fragment'
 
 
+Vue.use(Components)
 Vue.use(Plugin)
 
 new Vue({
   el: '#app',
-  components: {
-    Layout,
-    Parent,
-  },
   data: {
     address: '91 Võ Như Hưng',
     todos: [
